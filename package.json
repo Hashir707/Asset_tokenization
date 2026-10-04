@@ -1,0 +1,26 @@
+{
+  "name": "asset-tokenization",
+  "version": "1.0.0",
+  "description": "Asset Tokenization Using OpenZeppelin and Truffle - a blockchain based fractional ownership prototype for real world assets.",
+  "private": true,
+  "scripts": {
+    "compile": "truffle compile",
+    "ganache": "ganache --port 7545 --chain.chainId 1337 --chain.networkId 5777 --wallet.totalAccounts 10 --wallet.defaultBalance 1000 --logging.quiet",
+    "migrate": "truffle migrate --reset --network development",
+    "deploy": "npm run compile && truffle migrate --reset --network development && npm run sync",
+    "sync": "node scripts/sync-contracts.js",
+    "test": "truffle test --network test",
+    "seed": "node scripts/seed-demo.js",
+    "start": "npm run sync && node scripts/serve.js",
+    "serve": "node scripts/serve.js"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "4.9.6",
+    "ganache": "7.9.2",
+    "truffle": "5.11.5",
+    "web3": "1.10.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
